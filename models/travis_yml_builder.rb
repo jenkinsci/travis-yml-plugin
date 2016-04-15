@@ -22,6 +22,7 @@ class TravisYmlBuilder < Jenkins::Tasks::Builder
   # @param [Jenkins::Model::Listener] listener the listener for this build.
   def perform(build, launcher, listener)
     ws = build.workspace
+    envvars = build.native.getEnvironment()
 
     script = TravisYmlScript.new(:file => ws.join(".travis.yml"))
     script.build
@@ -36,17 +37,17 @@ class TravisYmlBuilder < Jenkins::Tasks::Builder
 
   private
 
-  def execute_script!(launcher, script, opts)
+  def execute_script!(launcher, envvars, script, opts)
     if script && script.exist?
-      ret = execute_script(launcher, script, opts)
+      ret = execute_script(launcher, envvars, script, opts)
       script.delete
       ret
     end
   end
 
-  def execute_script(launcher, script, opts)
+  def execute_script(launcher, envvars, script, opts)
     if script && script.exist?
-      launcher.execute("bash", script.to_s, opts)
+      launcher.execute(envvars, "bash", script.to_s, opts)
     end
   end
 end
