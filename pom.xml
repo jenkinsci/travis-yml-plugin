@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+<!--
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>2.3</version>
+    <relativePath/>
+  </parent>
+-->
+
+  <groupId>org.jenkins-ci.plugins</groupId>
+  <artifactId>travis-yml</artifactId>
+  <version>0.1.0</version>
+
+  <name>Travis YML Plugin</name>
+  <description>This plugin provides a Pipeline step to read a .travis.yml file and run it as a part of a Pipeline job.
+  </description>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/Travis+YML+Plugin</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>ikasam_a</id>
+      <name>Masaki Nakagawa</name>
+      <email>masaki.nakagawa@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+    <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+<!--
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>ruby-runtime</artifactId>
+      <version>0.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>git</artifactId>
+      <version>1.1.11</version>
+    </dependency>
+-->
+  </dependencies>
+</project>
